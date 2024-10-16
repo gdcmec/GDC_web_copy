@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@100;200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+* {
+
+  font-family: canada-type-gibson, sans-serif;
+  scroll-behavior: smooth;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* font-family: 'Monument Extended Regular', sans-serif; */
+      font-family: bungee, sans-serif;
+ 
+  }
+}
+:root{
+  --color-primary: #ffffff;
+  --color-secondary: #e2cbe2;
+  --color-tertiary: #ea97ee;
+  --color-quaternary: #eba9f4a9;
+  --color-quinary: #f18afa00;
+}
+.gradient-default {
+  background: rgb(92, 35, 222);
+  background: radial-gradient(circle, rgba(92, 35, 222, 1) 59%, rgba(0, 212, 255, 1) 74%, rgba(20, 9, 79, 1) 100%);
+  /* background: linear-gradient(-45deg,#80D0C7, #80D0C7, #060606, #060606 ); */
+  background-size: 400% 400%;
+  animation: gradienta 15s ease alternate-reverse;
+}
+
+.gradient {
+  /* background: rgb(92,35,222); */
+  /* background:radial-gradient(48.33% 60.62% at 80.87% 48.33%,#5635ad 0%,#13094e 100%); */
+  background: rgb(26, 26, 27);
+  background: radial-gradient(48.33% 60.62% at 80.87% 48.33%, #353538 0%, #181819 100%);
+
+  /* background: linear-gradient(-45deg,#80D0C7, #80D0C7, #060606, #060606 ); */
+}
+
+@keyframes gradienta {
+  0% {
+    background-position: 0% 30%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.events-gradient {
+  background: rgb(26, 26, 27);
+  background-image: radial-gradient(50% 100% at 50.33% 100%, #353538 0%, #181819 100%);
+}
+
+.text_shadows {
+  
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+
+  animation: shadows 1.2s ease-in , move 1.2s ease-in ;
+  letter-spacing: 0.4rem;
+}
+
+body{
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

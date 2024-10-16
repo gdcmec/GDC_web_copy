@@ -1,0 +1,888 @@
+@font-face {
+    font-family: Planet;
+    src: url(../../fonts/cyborg_punk/CyborgPunk.ttf);
+}
+
+@font-face {
+    font-family: space;
+    src: url(../../fonts/space_age/spaceage.ttf);
+}
+
+@font-face {
+    font-family: valorant;
+    src: url(../../fonts/valorant/ValorantFont.ttf);
+}
+
+@font-face {
+    font-family: nico;
+    src: url(../../fonts/NicoMoji-Regular.ttf);
+}
+
+@font-face {
+    font-family: drover;
+    src: url(../../fonts/drover/drover.woff2) format('woff2'),
+    url(../../fonts/drover/drover.ttf) format('truetype');
+}
+
+body{
+    /* background-color: #2C2A28 */
+    /* background-image: linear-gradient(to right, #2C2A28, #242222); */
+    background-color: #000000;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+}
+
+.bgsvg{
+    position: absolute;
+    height: 100vh;
+    width: 99vw;
+    z-index: -1;
+    margin-top: 25px;
+    display: block;
+    margin-top: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.landing{
+    position: relative;
+
+    /* color: linear-gradient(to right, #E66A1C, #F8BE1E); */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 170px; */
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.expimg{
+    position: absolute;
+    bottom: 20px ;
+    scale: 0.6;
+    height: 192px;
+    width: 192px;
+    border: none;
+    background-image: url('../../assets/Group.png');
+    background-color: transparent;
+    font-size: 50px;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.expimg:hover{
+    font-size: 60px;
+    animation: rotation infinite;
+}
+
+.con1{
+    position: absolute;
+    scale: 0.5;
+    opacity: 0.5;
+    left: -850px;
+    top: -250px;
+    transform: rotate(40deg);
+    z-index: 0;
+    filter: grayscale(0.5);
+}
+
+.con2{
+    position: absolute;
+    scale: 0.4;
+    opacity: 0.5;
+    right: -750px;
+    top: 100px;
+    transform: rotate(20deg);
+    z-index: 0;
+    filter: grayscale(0.5);
+}
+
+
+.landing-h1{
+    font-size: 6rem;
+    /* margin-left: 60px; */
+    /* text-shadow: 2px 5px 15px #000; */
+    /* line-height: 200%; */
+    text-align: center;
+    font-family: drover;
+    position: relative;
+    font-weight: 300;
+    z-index: 2;
+    cursor: default;
+    z-index: 1;
+    color: #E66A1C;
+    background: -webkit-linear-gradient(#E66A1C, #F8BE1E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.landing-h1:before,.landing-h1:after{
+  /* padding: 30px; */
+  color: #F8BE1E;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+}
+.landing-h1::before{
+  left: 5px;
+  text-shadow: -2px 0 red;
+  animation: glitch-2 2.5s linear infinite reverse;
+  
+
+}
+.landing-h1::after{
+  left: -5px;
+  text-shadow: -2px 0 #E66A1C;
+  animation: glitch-2 2.5s linear infinite reverse;
+}
+  
+  
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(132px, auto, 101px, 30px);
+  }
+  5% {
+    clip: rect(17px, auto, 94px, 30px);
+  }
+  10% {
+    clip: rect(40px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(87px, auto, 82px, 30px);
+  }
+  20% {
+    clip: rect(137px, auto, 61px, 30px);
+  }
+  25% {
+    clip: rect(34px, auto, 14px, 30px);
+  }
+  30% {
+    clip: rect(133px, auto, 74px, 30px);
+  }
+  35% {
+    clip: rect(76px, auto, 107px, 30px);
+  }
+  40% {
+    clip: rect(59px, auto, 130px, 30px);
+  }
+  45% {
+    clip: rect(29px, auto, 84px, 30px);
+  }
+  50% {
+    clip: rect(22px, auto, 67px, 30px);
+  }
+  55% {
+    clip: rect(67px, auto, 62px, 30px);
+  }
+  60% {
+    clip: rect(10px, auto, 105px, 30px);
+  }
+  65% {
+    clip: rect(78px, auto, 115px, 30px);
+  }
+  70% {
+    clip: rect(105px, auto, 13px, 30px);
+  }
+  75% {
+    clip: rect(15px, auto, 75px, 30px);
+  }
+  80% {
+    clip: rect(66px, auto, 39px, 30px);
+  }
+  85% {
+    clip: rect(133px, auto, 73px, 30px);
+  }
+  90% {
+    clip: rect(36px, auto, 128px, 30px);
+  }
+  95% {
+    clip: rect(68px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(14px, auto, 100px, 30px);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip: rect(129px, auto, 36px, 30px);
+  }
+  5% {
+    clip: rect(36px, auto, 4px, 30px);
+  }
+  10% {
+    clip: rect(85px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(91px, auto, 91px, 30px);
+  }
+  20% {
+    clip: rect(148px, auto, 138px, 30px);
+  }
+  25% {
+    clip: rect(38px, auto, 122px, 30px);
+  }
+  30% {
+    clip: rect(69px, auto, 54px, 30px);
+  }
+  35% {
+    clip: rect(98px, auto, 71px, 30px);
+  }
+  40% {
+    clip: rect(146px, auto, 34px, 30px);
+  }
+  45% {
+    clip: rect(134px, auto, 43px, 30px);
+  }
+  50% {
+    clip: rect(102px, auto, 80px, 30px);
+  }
+  55% {
+    clip: rect(119px, auto, 44px, 30px);
+  }
+  60% {
+    clip: rect(106px, auto, 99px, 30px);
+  }
+  65% {
+    clip: rect(141px, auto, 74px, 30px);
+  }
+  70% {
+    clip: rect(20px, auto, 78px, 30px);
+  }
+  75% {
+    clip: rect(133px, auto, 79px, 30px);
+  }
+  80% {
+    clip: rect(78px, auto, 52px, 30px);
+  }
+  85% {
+    clip: rect(35px, auto, 39px, 30px);
+  }
+  90% {
+    clip: rect(67px, auto, 70px, 30px);
+  }
+  95% {
+    clip: rect(71px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(83px, auto, 40px, 30px);
+  }
+}
+
+#sub{
+    font-family: space;
+    font-size: 30px;
+    color: #fff;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.blogbtn{
+    height: 45px;
+    width: 160px;
+    scale: 1;
+    border-radius: 30px;
+    position: absolute;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    right: 5vw;
+    border: none;
+    background-color: #000;
+    color: #F8BE1E;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.blogbtn:hover{
+    animation: btnhover 0.7s ease-in-out;
+}
+
+.logo{
+    display: none;
+    z-index: 10;
+}
+
+.blogbtn:active{
+    box-shadow: inset 3px 3px 4px #181717,
+            inset -3px -3px 4px #302d2d;
+    background: #242222;
+}
+
+.modeldiv{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0.8;
+    margin: 0;
+}
+
+@keyframes btnhover{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        box-shadow: 2px 2px 3px #333333;
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* @media (max-width: 1500px) and (max-height:2000px) {
+
+  body{
+      overflow-x: hidden !important;
+  }
+  
+  .landing{
+      background-image: linear-gradient(to bottom, #3D3D3D, #1F1F1F);
+      flex-direction: column;
+  }
+
+  .landing h1{
+      font-size: 5rem;
+      margin: 0;
+      padding: 18px;
+      text-align: center;
+      height: 100vdh;
+  }
+
+  #sub{
+      font-size: 40px;
+  }
+
+  .expimg{
+      height: 120px;
+      width: 120px;
+      scale: 1.5;
+      background-size: contain;
+      bottom: 90px;
+      font-size: 2em;
+  }
+
+  .landing{
+      justify-content: center;
+      margin: 0;
+  }
+
+  ul{
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+  }
+
+  button{
+      height: 40px;
+      width: 100px;
+      font-size: 15px;
+  }
+
+  .blogbtn{
+      height: 35px;
+      width: 120px;
+      font-size: 14px;
+      right: 10px;
+      top: 20px;
+  }
+
+  .logo{
+      height: 170px;
+      width: 170px;
+      position: fixed;
+      display: flex;
+      top: -45px;
+      left: -45px;
+  }
+
+  .con1{
+      scale: 1;
+      top: 90px;
+      left: -550px;
+  }
+  
+  .con2{
+      scale: 1;
+      right: -450px;
+      top: 1300px;
+      transform: rotate(4deg);
+  }
+
+  .bgsvg{
+      display: none;
+  }
+
+} */
+
+@media (max-width: 700px) {
+
+    body{
+        overflow-x: hidden !important;
+    }
+    
+    .landing{
+        background-image: linear-gradient(to bottom, #3D3D3D, #1F1F1F);
+        flex-direction: column;
+    }
+
+  .landing-h1:hover:before,
+  .landing-h1:hover:after {
+  content: '';
+}
+
+    .landing h1{
+        font-size: 2rem;
+        margin: 0;
+        padding: 18px;
+        text-align: center;
+        height: 100vdh;
+    }
+
+    .landing-h1:before,.landing-h1:after{
+      content: "";
+    }
+
+    #sub{
+        font-size: 16px;
+    }
+
+    .expimg{
+        height: 120px;
+        width: 120px;
+        scale: 0.7;
+        background-size: contain;
+        bottom: 90px;
+        font-size: 2em;
+    }
+
+    .landing{
+        justify-content: center;
+        margin: 0;
+    }
+
+    ul{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    button{
+        height: 40px;
+        width: 100px;
+        font-size: 15px;
+    }
+
+    .blogbtn{
+        height: 35px;
+        width: 120px;
+        font-size: 14px;
+        right: 10px;
+        top: 20px;
+    }
+
+    .logo{
+        height: 170px;
+        width: 170px;
+        position: fixed;
+        display: flex;
+        top: -45px;
+        left: -45px;
+    }
+
+    .con1{
+        scale: 1;
+        top: 90px;
+        left: -270px;
+    }
+    
+    .con2{
+        scale: 1;
+        right: -250px;
+        top: 600px;
+        transform: rotate(4deg);
+    }
+
+    .bgsvg{
+        display: none;
+    }
+
+}
+
+@media (max-width: 1100px) and (min-height: 1000px) {
+
+  body{
+      overflow-x: hidden !important;
+  }
+  
+  .landing{
+      background-image: linear-gradient(to bottom, #3D3D3D, #1F1F1F);
+      flex-direction: column;
+  }
+  .landing-h1:before,.landing-h1:after{
+    content: "";
+  }
+
+  .landing h1{
+      font-size: 4rem;
+      margin: 0;
+      padding: 18px;
+      text-align: center;
+      height: 100vdh;
+  }
+
+  #sub{
+      font-size: 30px;
+  }
+
+  .expimg{
+      height: 120px;
+      width: 120px;
+      scale: 1;
+      background-size: contain;
+      bottom: 120px;
+      font-size: 2em;
+  }
+
+  .landing{
+      justify-content: center;
+      margin: 0;
+  }
+
+  ul{
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+  }
+
+  button{
+      height: 40px;
+      width: 100px;
+      font-size: 15px;
+  }
+
+  .blogbtn{
+      height: 35px;
+      width: 120px;
+      font-size: 14px;
+      right: 10px;
+      top: 20px;
+  }
+
+  .logo{
+      height: 170px;
+      width: 170px;
+      position: fixed;
+      display: flex;
+      top: -45px;
+      left: -45px;
+  }
+
+  .con1{
+      scale: 1;
+      top: 70px;
+      left: -570px;
+  }
+  
+  .con2{
+      scale: 1;
+      right: -550px;
+      top: 800px;
+      transform: rotate(4deg);
+  }
+
+  .bgsvg{
+      display: none;
+  }
+
+}
+
+
+
+/* @media (max-width: 400px){
+  .landing-h1{
+    font-size: 2rem;
+  }
+  #sub{
+    font-size: 0.5rem;
+  }
+
+} */
+
+@media (max-width: 1200px) and (max-height: 680px) {
+
+    .landing{
+      height: 100vh;
+    }
+
+    .landing-h1{
+        font-size: 4rem;
+    }
+
+    .expimg{
+        scale: 0.5;
+        bottom: -19px;
+    }
+
+    #sub{
+        font-size: 1.3rem; 
+    }
+
+    .con1{
+        left: -550px;
+        top: -180px;
+    }
+    /* .landing-h1:before,.landing-h1:after{
+      content: "";
+    } */
+
+    .con2{
+        right: -550px;
+        top: 100px;
+        transform: rotate(2deg);
+    }
+
+    .blogbtn{
+        scale: 0.8;
+        top: 20px;
+    }
+
+}
+
+@media (max-width: 1300px) and (max-height: 780px) {
+
+  .landing{
+    height: 100vh;
+  }
+
+  .landing-h1{
+      font-size: 4rem;
+  }
+
+  .expimg{
+      scale: 0.5;
+      bottom: -19px;
+  }
+
+  #sub{
+      font-size: 1.3rem; 
+  }
+
+  .con1{
+      left: -550px;
+      top: -180px;
+  }
+
+  .con2{
+      right: -550px;
+      top: 100px;
+      transform: rotate(2deg);
+  }
+
+  .blogbtn{
+      scale: 0.8;
+      top: 20px;
+  }
+
+}
+
+@media (max-width: 1450px) and (max-height: 750px) {
+  .landing-h1{
+    font-size: 4.5rem;
+  }
+
+  #sub{
+    font-size: 1.7rem;
+  }
+
+  .expimg{
+    bottom: 0;
+  }
+}
+
+@media (max-width: 1450px) and (max-height: 600px){
+  .expimg{
+    scale: 0.5;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 450px) and (max-height: 700px) {
+  #sub{
+    font-size: 1rem;
+  }
+
+  .expimg{
+    bottom: 50px;
+  }
+  
+  .blogbtn{
+    scale: 0.9;
+  }
+
+  .con1{
+    left: -210px;
+    top: 20px;
+  }
+
+  .con2{
+    right: -210px;
+    top: 550px;
+    transform: rotate(-4deg);
+  }
+}
+
+@media (min-width: 300px) and (max-width: 380px) and (min-height: 720px) and (max-height:750px){
+  .con1{
+    left: -210px;
+    top: 20px;
+  }
+
+  .con2{
+    right: -210px;
+    top: 550px;
+    transform: rotate(-4deg);
+  }
+
+  .landing h1{
+    font-size: 2rem;
+  }
+
+  #sub{
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 500px) and (max-width: 550px) and (min-height: 700px) and (max-height:750px){
+  .con1{
+    left: -330px;
+    top: 20px;
+  }
+
+  .con2{
+    right: -300px;
+    top: 550px;
+    transform: rotate(-4deg);
+  }
+
+  .landing h1{
+    font-size: 2rem;
+  }
+
+  #sub{
+    font-size: 0.9rem;
+  }
+
+  .expimg{
+    bottom: 50px;
+  }
+}
+
+
+
+@media (min-width: 200px) and (max-width: 300px){
+  .landing-h1{
+    scale: 0.7;
+  }
+
+  #sub{
+    font-size: 0.6rem;
+  }
+
+  .con1{
+    left: -150px;
+  }
+
+  .con2{
+    top: 350px;
+    right: -150px;
+  }
+
+  .expimg{
+    scale: 0.4;
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 500px) and (max-height:600px)  {
+  .landing-h1{
+    scale: 0.9;
+  }
+
+  #sub{
+    font-size: 1rem;
+  }
+
+  .con1{
+    left: -250px;
+  }
+
+  .con2{
+    bottom: 350px;
+    right: -250px;
+  }
+
+}
+
+
+@media (min-width: 100px) and (max-width: 200px){
+  .landing-h1{
+    scale: 0.5;
+  }
+
+  #sub{
+    font-size: 0.5rem;
+  }
+
+  .con1{
+    left: -250px;
+  }
+
+  .con2{
+    bottom: 350px;
+    right: -250px;
+  }
+
+  .expimg{
+    scale: 0.3;
+    bottom: 20px;
+  }
+}
+

@@ -1,0 +1,28 @@
+* {
+  transition: all 500ms ease;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e8903e;
+}
+
+#events{
+  background-image: url(./assets/events-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  max-height: fit-content;
+  height: fit-content;
+}
+
+#team{
+    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
+}
