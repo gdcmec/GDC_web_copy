@@ -18,6 +18,7 @@ import ValoCard from './components/ValoCard/ValoCard';
 import CardContainer from './components/CardContainer/CardContainer';
 import Events from './components/CardContainer/CardContainer';
 import TeamPage from './components/Team/TeamPage';
+import BlogPage from './components/Blog/BlogPage';
 
 const pages = () => {
   return (
@@ -35,6 +36,9 @@ const pages = () => {
             {/* <section id="team">
               <TeamPage />
             </section> */}
+            <section id="blog">
+              <BlogPage />
+            </section>
             <section id="contact">
               <Contact />
         </section>

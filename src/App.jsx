@@ -18,6 +18,7 @@ import ValoCard from './components/ValoCard/ValoCard';
 import CardContainer from './components/CardContainer/CardContainer';
 import Events from './components/CardContainer/CardContainer';
 import Pages from './pages'
+import BlogDisplay from './components/Blog/BlogDisplay';
 
 
 function App() {
@@ -68,9 +69,9 @@ function App() {
   const navbarClasses = scrollPos > 500 ? ' gradient' : 'gradient-default';
   return (
     <div>
-      {loading ? (
+      {/* {loading ? (
         <Responsivehook1 />
-      ) : (
+      ) : ( */}
         <BrowserRouter>
           {/* <Navbar /> */}
           {/* <NintendoMob/> */}
@@ -79,11 +80,12 @@ function App() {
             <Routes>
               <Route index element = {<Pages />}/>
               <Route path="/team" element={<Team />} />
+              <Route path="/blog/:id" element={<BlogDisplay />} />
             </Routes>
             {/* <Footer /> */}
           </AnimatePresence>
         </BrowserRouter>
-      )}
+      {/* )} */}
     </div>
   );
 }

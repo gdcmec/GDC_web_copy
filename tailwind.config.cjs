@@ -13,7 +13,9 @@ module.exports = {
       mfont: ["Black Ops One", "system-ui"],
       navfont: ["Orbitron", "sans-serif"],
       title: ["Press Start 2P", "system-ui"],
-      subtitle: ["Wallpoet", "sans-serif"]
+      subtitle: ["Wallpoet", "sans-serif"],
+      pacfont: ["pacfont", "sans-serif"],
+      Syne: ["Syne", "sans-serif"],
     }
   },
   plugins: [],
