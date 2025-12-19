@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react';
-import './Nintendo.css';
+import './Nintendo.css'
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 export const Nintendo = () => {
@@ -38,7 +40,7 @@ export const Nintendo = () => {
           <div className="screen">
             <div className="glass"></div>
 
-          
+
 
             <span>
               Welcome to

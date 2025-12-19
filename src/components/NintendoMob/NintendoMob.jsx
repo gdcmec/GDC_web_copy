@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react';
-// import './NintendoMob.css';
+import './NintendoMob.css'
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 export const NintendoMob = () => {

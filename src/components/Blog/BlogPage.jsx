@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useContext, useEffect, createContext, useState } from 'react';
 import BlogCard from './BlogCard';
 import blogContents from './BlogContents';
@@ -9,7 +11,7 @@ const BlogPage = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-    try {
+      try {
         const fetchedBlogs = await getBlogs();
         setBlogData(fetchedBlogs);
         console.log(fetchedBlogs);

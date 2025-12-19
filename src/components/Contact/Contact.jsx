@@ -1,4 +1,6 @@
-import { React, useState, useEffect }from 'react';
+'use client'
+
+import { React, useState, useEffect } from 'react';
 import './Contact.css';
 import logo from '../../assets/croppedlogo.png';
 import Sending from '../../assets/send-anim.gif'
@@ -23,7 +25,7 @@ function Contact() {
       body: formData
     });
 
-    
+
 
     const data = await response.json();
 
@@ -37,12 +39,13 @@ function Contact() {
   };
 
   useEffect(() => {
-    if(popup) {
+    if (popup) {
       const timer = setTimeout(() =>
         setPopup(false), 3000);
-      return () => clearTimeout(timer)};
-    },
-  [popup]);
+      return () => clearTimeout(timer)
+    };
+  },
+    [popup]);
 
 
   return (
@@ -118,20 +121,20 @@ function Contact() {
             required
           />
         </div>
-      <div className="w-full">
-        <button
-          type="submit"
-          className="items-center align-center my-2 p-2 text-sm text-white  bg-yellow-500 bg-opacity-1 rounded-3xl shadow-sm hover:bg-yellow-600 drop-shadow-sm sm:w-1/3"
-        >
-          Send { '>' }
-        </button>
-      </div>
+        <div className="w-full">
+          <button
+            type="submit"
+            className="items-center align-center my-2 p-2 text-sm text-white  bg-yellow-500 bg-opacity-1 rounded-3xl shadow-sm hover:bg-yellow-600 drop-shadow-sm sm:w-1/3"
+          >
+            Send {'>'}
+          </button>
+        </div>
       </form>
       {popup && (
         <div className="msgoverlaybg">
           <div className="msgoverlay">
-              {/* <h3>{result}</h3> */}
-              <img src={Sending} alt="" />
+            {/* <h3>{result}</h3> */}
+            <img src={Sending} alt="" />
           </div>
         </div>
       )}

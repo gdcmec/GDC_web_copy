@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import ValoCard from '../ValoCard/ValoCard';
 import background from '../../assets/events-bg.jpg';
@@ -93,7 +95,7 @@ const CardContainer = () => {
               setActive(true);
               changeColor();
             }}
-            // style={{color: "#fff"}}
+          // style={{color: "#fff"}}
           >
             Upcoming
           </button>
@@ -104,7 +106,7 @@ const CardContainer = () => {
               setActive(false);
               changeColor();
             }}
-            // style={{color: "#fff"}}
+          // style={{color: "#fff"}}
           >
             Past
           </button>
@@ -132,7 +134,7 @@ const CardContainer = () => {
           )}
         </div>
 
-        
+
       )}
     </>
   );
