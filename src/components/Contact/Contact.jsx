@@ -1,7 +1,6 @@
 'use client'
 
 import { React, useState, useEffect } from 'react';
-import './Contact.css';
 import logo from '../../assets/croppedlogo.png';
 import Sending from '../../assets/send-anim.gif'
 
@@ -131,8 +130,8 @@ function Contact() {
         </div>
       </form>
       {popup && (
-        <div className="msgoverlaybg">
-          <div className="msgoverlay">
+        <div className="fixed h-screen w-screen top-0 left-0 bg-black/55 flex items-center justify-center">
+          <div className="h-[250px] w-[250px] rounded-[25px] relative text-white bg-black flex items-center justify-center">
             {/* <h3>{result}</h3> */}
             <img src={Sending} alt="" />
           </div>
