@@ -69,23 +69,23 @@ function App() {
   const navbarClasses = scrollPos > 500 ? ' gradient' : 'gradient-default';
   return (
     <div>
-      {/* {loading ? (
+      {loading ? (
         <Responsivehook1 />
-      ) : ( */}
+      ) : (
         <BrowserRouter>
           {/* <Navbar /> */}
           {/* <NintendoMob/> */}
 
           <AnimatePresence>
             <Routes>
-              <Route index element = {<Pages />}/>
+              <Route index element={<Pages />} />
               <Route path="/team" element={<Team />} />
               <Route path="/blog/:id" element={<BlogDisplay />} />
             </Routes>
             {/* <Footer /> */}
           </AnimatePresence>
         </BrowserRouter>
-      {/* )} */}
+      )}
     </div>
   );
 }
