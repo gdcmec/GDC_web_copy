@@ -1,18 +1,19 @@
+/* App.css */
+
 * {
-  transition: all 500ms ease;
+  /* It is better to remove this global transition, it makes the site laggy */
+  /* transition: all 500ms ease; */
 }
 
 *::-webkit-scrollbar {
   width: 5px;
 }
 
-
-
 *::-webkit-scrollbar-thumb {
   background-color: #e8903e;
 }
 
-#events{
+#events {
   background-image: url(./assets/events-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,8 +22,48 @@
   height: fit-content;
 }
 
-#team{
-    height: 100vh;
-    min-height: 100vh;
-    max-height: fit-content;
+#team {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: fit-content;
+}
+
+/* --- ADD THIS SECTION TO FIX INVISIBLE INPUTS --- */
+
+/* Target the inputs inside the contact section specifically */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  /* Force a background color so we can see the box */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+
+  /* Force text color to be white */
+  color: white !important;
+
+  /* Add a subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+  /* Ensure layout properties */
+  display: block !important;
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 1rem;
+  /* Add spacing between inputs */
+}
+
+/* Style the placeholder text (e.g., "First Name") so it is visible */
+::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1;
+}
+
+/* Add a glow effect when you click inside */
+input:focus,
+textarea:focus {
+  border-color: #eab308 !important;
+  /* Yellow-500 */
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }

@@ -7,15 +7,15 @@ module.exports = {
         "primary": "#ffbe1c",
         "secondary": "#fff3d5",
         "landback": "#111611"
+      },
+      fontFamily: {
+        mfont: ["Black Ops One", "system-ui"],
+        navfont: ["Orbitron", "sans-serif"],
+        title: ["Press Start 2P", "system-ui"],
+        subtitle: ["Wallpoet", "sans-serif"],
+        pacfont: ["pacfont", "sans-serif"],
+        Syne: ["Syne", "sans-serif"],
       }
-    },
-    fontFamily: {
-      mfont: ["Black Ops One", "system-ui"],
-      navfont: ["Orbitron", "sans-serif"],
-      title: ["Press Start 2P", "system-ui"],
-      subtitle: ["Wallpoet", "sans-serif"],
-      pacfont: ["pacfont", "sans-serif"],
-      Syne: ["Syne", "sans-serif"],
     }
   },
   plugins: [],

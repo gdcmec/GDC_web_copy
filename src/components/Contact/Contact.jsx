@@ -1,141 +1,145 @@
-import { React, useState, useEffect }from 'react';
+import { React, useState, useEffect } from 'react';
 import './Contact.css';
 import logo from '../../assets/croppedlogo.png';
-import Sending from '../../assets/send-anim.gif'
+import Sending from '../../assets/send-anim.gif';
 
 function Contact() {
-
-  const [result, setResult] = useState("hi");
+  const navfont = "font-navfont";
+  const [result, setResult] = useState("");
   const [popup, setPopup] = useState(false);
 
-
   const onSubmit = async (event) => {
-    setPopup(true);
-    setPopup(true);
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
+    setPopup(true);
 
+    const formData = new FormData(event.target);
     formData.append("access_key", "15d4c9a1-7d94-4f4f-a2f6-79cd5e5864c0");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    
+      const data = await response.json();
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error("Submission error", error);
+      setResult("Something went wrong");
     }
   };
 
   useEffect(() => {
-    if(popup) {
-      const timer = setTimeout(() =>
-        setPopup(false), 3000);
-      return () => clearTimeout(timer)};
-    },
-  [popup]);
+    if (popup) {
+      const timer = setTimeout(() => {
+        setPopup(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [popup]);
 
+  // Common styling for all input fields to ensure consistency
+  const inputStyles = "w-full px-4 py-3 bg-gray-400/20 border border-white/10 text-white text-sm rounded-sm focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500 placeholder-gray-400 transition-all shadow-inner";
 
   return (
-    <div className="flex flex-col py-4 px-6  mx-6 h-auto bg-black bg-opacity-30 border border-black max-w-screen-md sm:w-2/5 ">
-      <img src={logo} alt="logo" className="rounded-full h-20 object-contain  items-center" />
-      <h2 className="mb-3 font-navfont text-3xl text-white ">CONTACT US</h2>
-      <p className="mb-4  font-light text-center text-gray-300 sm:text-xl">Get in touch with us!</p>
-      <form onSubmit={onSubmit}>
-        <div className="flex flex-row">
-          <div className="w-1/2 pr-2">
-            <label for="firstName" className="text-white hidden">
-              {' '}
-              First Name:
-            </label>
+    <section id="contact">
+      <div className="relative flex flex-col py-10 px-8 h-auto bg-black/40 backdrop-blur-md border border-white/10 max-w-lg w-full rounded-xl shadow-2xl">
+
+        <img
+          src={logo}
+          alt="logo"
+          className="h-16 object-contain items-center mx-auto mb-4"
+        />
+
+        <h2 className="mb-2 font-navfont text-3xl font-bold text-white text-center tracking-[0.2em] uppercase">
+          Contact Us
+        </h2>
+
+        <p className="mb-8 font-light text-center text-gray-300 text-sm sm:text-base">
+          Get in touch with us!
+        </p>
+
+        <form onSubmit={onSubmit} className="w-full space-y-4">
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <input
+                type="text"
+                name='firstname'
+                className={inputStyles}
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div className="flex-1">
+              <input
+                type="text"
+                name='lastname'
+                className={inputStyles}
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
             <input
-              type="text"
-              name='firstname'
-              className="shadow-sm text-white text-sm rounded-sm block w-full p-2.5  bg-gray-400 bg-opacity-20"
-              id="fname"
-              placeholder="First Name"
+              type="email"
+              name='email'
+              className={inputStyles}
+              placeholder="Email"
               required
             />
           </div>
-          <div className="w-1/2 pl-2">
-            <label for="lastName" className="text-white hidden">
-              Last Name:{' '}
-            </label>
+
+          <div>
             <input
               type="text"
-              name='lastname'
-              className="shadow-sm bg-gray-400 bg-opacity-20 text-white text-sm rounded-sm block w-full p-2.5 "
-              id="lname"
-              placeholder="Last Name"
+              name='phoneNumber'
+              className={inputStyles}
+              placeholder="Phone Number"
+            />
+          </div>
+
+          <div>
+            <textarea
+              rows="5"
+              name='message'
+              className={`${inputStyles} resize-none`}
+              placeholder="Message"
               required
             />
           </div>
-        </div>
-        <div className="pt-4">
-          <label for="email" className="text-white hidden">
-            Email:{' '}
-          </label>
-          <input
-            type="email"
-            name='email'
-            className="shadow-sm bg-gray-400 bg-opacity-20 text-white text-sm rounded-sm block w-full p-2.5 "
-            id="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div className="pt-4">
-          <label for="phoneNumber" className="text-white hidden">
-            Phone Number:{' '}
-          </label>
-          <input
-            type="text"
-            name='phoneNumber'
-            className="shadow-sm bg-gray-400 bg-opacity-20 text-white text-sm rounded-sm block w-full p-2.5 "
-            id="phonenumber"
-            placeholder="Phone Number"
-          />
-        </div>
-        <div className="py-4">
-          <label for="message" className="text-white hidden">
-            Message{' '}
-          </label>
-          <textarea
-            rows="6"
-            name='message'
-            className="text- shadow-sm bg-gray-400 bg-opacity-20 text-white text-sm rounded-sm block w-full p-3 h-32 "
-            id="message"
-            placeholder="Message"
-            required
-          />
-        </div>
-      <div className="w-full">
-        <button
-          type="submit"
-          className="items-center align-center my-2 p-2 text-sm text-white  bg-yellow-500 bg-opacity-1 rounded-3xl shadow-sm hover:bg-yellow-600 drop-shadow-sm sm:w-1/3"
-        >
-          Send { '>' }
-        </button>
+
+          <div className="w-full flex justify-center pt-2">
+            <button
+              type="submit"
+              className="px-10 py-3 text-sm font-bold text-white bg-yellow-500 rounded-full shadow-lg hover:bg-yellow-600 hover:scale-105 active:scale-95 transform transition-all duration-200 cursor-pointer"
+            >
+              Send &gt;
+            </button>
+          </div>
+        </form>
+
+        {/* Popup Overlay */}
+        {popup && (
+          <div className="msgoverlaybg">
+            <div className="bg-black border border-gray-700 p-6 rounded-2xl shadow-2xl flex flex-col items-center w-62.5 h-62.5 justify-center text-center">
+              <img src={Sending} alt="Sending..." className="w-20 h-20 mb-4 object-contain" />
+              <p className="text-white font-medium text-lg">{result}</p>
+            </div>
+          </div>
+        )}
       </div>
-      </form>
-      {popup && (
-        <div className="msgoverlaybg">
-          <div className="msgoverlay">
-              {/* <h3>{result}</h3> */}
-              <img src={Sending} alt="" />
-          </div>
-        </div>
-      )}
-    </div>
+    </section>
   );
 }
 
